@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "热词翻译&百科",
+    "version": "0.0.1",
+    "description": "划词提供网络热词解释、梗解释、百科解释、中英翻译、名词解释、技术文章索引。",
+    "icons": {
+      "16": "16x16.png",
+      "48": "48x48.png",
+      "128": "128x128.png"
+    },
+    "permissions": [
+      "activeTab",
+      "contextMenus",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"],
+        "end": "document_end"
+      }
+    ]
+  }
