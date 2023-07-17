@@ -13,8 +13,8 @@ chrome.contextMenus.create({
       var selectedText = info.selectionText;
       // console.log(selectedText)
       // 发送消息给 content script
-      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { action: "showInterpretations", word: selectedText });
+      chrome.tabs.query({active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {action: "showInterpretations", word: selectedText});
       });
     }
   });
